@@ -1,12 +1,14 @@
 import styles from "./SearchField.module.css";
 
-const SearchField = () => {
-  
+const SearchField = ({ setSearchFilter }) => {
   return (
     <div className={styles.wrapper}>
       <input
         placeholder="Filter dishes..."
-        type="text"     
+        onChange={(e) => {
+          return setSearchFilter(e.target.value.toLowerCase());
+        }}
+        type="text"
       />
     </div>
   );
